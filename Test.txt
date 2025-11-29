@@ -1,0 +1,1 @@
+python -m clip_lab4.eval --data_root /path/to/coco2014 --checkpoint weights/epoch_5.pt
