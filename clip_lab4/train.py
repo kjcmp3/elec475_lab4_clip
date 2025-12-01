@@ -46,7 +46,7 @@ def main():
         images_dir=train_images,
         captions_json=train_caps,
         image_size=cfg.image_size,
-        device="cpu",
+        device=cfg.device,
         cache_text=False,  # set True later if you want precomputed text embeddings
     )
 
