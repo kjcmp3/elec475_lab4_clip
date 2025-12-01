@@ -12,6 +12,8 @@ from .config import TrainConfig
 from .dataset import CocoClipDataset
 from .model import ImageEncoder, ClipLoss
 
+data_root = "/content/coco2014"
+
 
 def parse_args():
     parser = argparse.ArgumentParser()
