@@ -12,6 +12,10 @@ from .config import TrainConfig
 from .dataset import CocoClipDataset
 from .model import ImageEncoder, ClipLoss
 
+from torch.utils.data import DataLoader, Subset
+import numpy as np
+
+
 data_root = "/content/coco2014"
 
 
@@ -49,6 +53,12 @@ def main():
         device=cfg.device,
         cache_text=False,  # set True later if you want precomputed text embeddings
     )
+
+    if cfg.max_samples is not None:
+        n = min(cfg.max_samples, len(dataset))
+        indices = np.random.choice(len(dataset), n, replace=False)
+        dataset = Subset(dataset, indices)
+        print(f"Using subset of {n} samples for training.")
 
     loader = DataLoader(
         dataset,

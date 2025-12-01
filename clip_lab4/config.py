@@ -10,10 +10,11 @@ class TrainConfig:
     image_size: int = 224
 
     batch_size: int = 64
-    num_workers: int = 0
+    num_workers: int = 4
     lr: float = 1e-4
     weight_decay: float = 1e-4
     epochs: int = 5
+    max_samples: int | None = 5000
 
     device: str = "cuda"
     log_interval: int = 50
