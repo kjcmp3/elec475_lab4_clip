@@ -45,7 +45,7 @@ def main():
         images_dir=val_images,
         captions_json=val_caps,
         image_size=cfg.image_size,
-        device=cfg.device,
+        device="cpu",
         cache_text=True,  # precompute text embeddings
     )
     loader = DataLoader(dataset, batch_size=64, shuffle=False)
